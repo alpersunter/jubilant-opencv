@@ -7,3 +7,8 @@ My opencv experiences while learning it.
   Reads images via cv2.imread()
   Scales images via cv2.resize()
   Produces the video via cv2.VideoWrite class
+
+- Simple VideoCapture
+  
+  Reads "Me Me Big Boy" and plays back to you via cv2.VideoCapture() class.
+  
