@@ -62,7 +62,7 @@ wavef.setsampwidth(2)
 wavef.setframerate(sampleRate)
 
 vector = vector - np.mean(vector)
-vector = vector / vector.max()
+vector = vector / np.absolute(vector).max()
 
 for i in range(vector.size):
     value = int(vector[i]*32767.0)
