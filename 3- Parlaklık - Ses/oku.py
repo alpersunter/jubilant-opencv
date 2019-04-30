@@ -20,7 +20,7 @@ print(frame_count)
 ret, frame = video.read()
 
 cv2.imshow("Piksel begenin, herhangi bir tusa basip konsola gidin", frame)
-cv2.waitKey()
+retval = cv2.waitKey()
 
 while(not (0<x and x < width)):
     x = int(input("Uygun bir X girin:"))
@@ -41,7 +41,7 @@ while(ret):
     if(ctr % 1000 == 0):
         print(str(ctr) + " kare okundu.\tYüzde: " + str((ctr/frame_count)*100))
 
-
+vector[0]=0
 ### OKUNDU! DOSYAYA YAZILIYOR
 print("Okuma tamamlandı, dosyaya yazılıyor...")
 video.release()
@@ -61,7 +61,7 @@ wavef.setnchannels(1) # mono
 wavef.setsampwidth(2) 
 wavef.setframerate(sampleRate)
 
-vector[0]=0
+vector = vector - np.mean(vector)
 vector = vector / vector.max()
 
 for i in range(vector.size):
@@ -70,3 +70,4 @@ for i in range(vector.size):
     wavef.writeframesraw( data )
 
 wavef.close()
+print(ses_adı  + " kaydedildi.") 
