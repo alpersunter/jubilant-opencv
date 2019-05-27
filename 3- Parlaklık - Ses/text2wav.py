@@ -6,7 +6,7 @@ import math
 
 f = open("demofile.txt", "r")
 sesVektörü = f.read().split()
-sesVektörü = [ int(x) for x in sesVektörü]
+sesVektörü = [ float(x) for x in sesVektörü]
 sesVektörü = np.array(sesVektörü)
 
 # SESE DÖNÜŞTÜRÜLÜYOR
